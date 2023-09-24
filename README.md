@@ -33,7 +33,7 @@ Sovelluksen ominaisuudet:
 8. Pääkäyttäjä näkee muiden käyttäjien etenemisen kursseilla
 9. Pääkäyttäjä voi lisätä tai poistaa kurssin käyttäjiä
 
-- Sovelluksen ominaisuudet kirjautuminen ja käyttäjätunnuksen tekeminen löytyvät koodista. Myös tietokantayhteys on saatu toimimaan. Tällä hetkellä "login" tai "register" aiheuttavat virheen nimeltä Bad request. Kyseessä on todennäköisesti jokin virhe "POST" komennossa, jota en nyt löydä. Seuraavaksi on tarkoitus korjata kyseinen virhe, lisätä uusia tauluja ja rakentaa kurssialustan pohja. Tarvittavien toiminnallisuuksien jälkeen alan muokkaamaan sovelluksen visuaalista ilmettä. Sovellus on vasta alussa, mutta sille on tehty hyvä pohja jatkolle.
+- Sovelluksen ominaisuudet kirjautuminen ja käyttäjätunnuksen tekeminen löytyvät koodista. Myös tietokantayhteys on saatu toimimaan. Tällä hetkellä "login" tai "register" aiheuttavat virheen nimeltä Bad request. Kyseessä on todennäköisesti jokin virhe "POST" komennossa, jota en ole vielä paikallistanut. Seuraavaksi on tarkoitus korjata kyseinen virhe, lisätä uusia tauluja ja rakentaa kurssialustan pohja. Tarvittavien toiminnallisuuksien jälkeen alan muokkaamaan sovelluksen visuaalista ilmettä. Sovellus on vasta alussa, mutta sille on tehty hyvä pohja jatkolle.
 
 Sovelluksen taulut:
 1. Users
