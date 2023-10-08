@@ -1,11 +1,43 @@
-<h1>ANATOMY for dummies</h1>
-<b>WELCOME</b> <i>to learn about anatomy</i>!
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class='container'>
+<h2 class='center'>Welcome to Learn About Anatomy!</h2>
+<p>You've arrived at an exciting journey into the depths of the human body's secrets. This interactive web application is designed to make learning anatomy fun and understandable. Whether you're a student, a healthcare professional, or simply curious about what goes on inside our bodies, this app is for you.</p>
+
+<h2>What Can You Expect from the "Anatomy for Dummies" App?</h2>
+<ol>
+<li>
+<p>Clear and Illustrative Learning Materials: We provide clear and straightforward explanations of the structure and functions of the human body to help you grasp the basics easily.</p>
+</li>
+<li>
+<p>Practice Exercises: Test your knowledge with interactive practice exercises and track your progress on your learning journey.</p>
+</li>
+<li>
+<p>Study Groups and Discussions: Join discussions with fellow enthusiastic learners to explore intriguing topics in anatomy.</p>
+</li>
+</ol>
+
+<p>We are committed to providing you with the best possible learning experience in the field of anatomy. Start your journey into the fascinating world of the human body now and expand your knowledge with "Anatomy for Dummies"!</p>
+
+<h2 class='center'>Join Us and Kickstart Your Learning Today!</h2>
+
+<p>To log in, please fill in your username and password:</p>
+<form action='/login' method='POST'>
+<input type='text' name='username' placeholder='Username'>
+<div class='login-button'>
+<input type='password' name='password' placeholder='Password'>
 <br>
-<br>
-<form action="/login" method="POST">
-<input type="submit" value="Login">
-</form>
-<form action="/register" method="POST">
-<input type="submit" value="Register">
+<form action='/login' method='GET'></form>
+<input type='submit' value='Login'>
+</div>
 </form>
 
+<p>Don't have an account yet? Press "Register" and join "Anatomy for Dummies"</p>
+<form action='/register' method='GET'>
+<input type='submit' value='Register'>
+</form>
+</div>
+<hr>
+
+{% endblock %}

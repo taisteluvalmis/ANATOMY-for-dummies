@@ -1,6 +1,6 @@
 from app import app
 from flask import redirect, render_template, request
-import users
+import users, courses, stats
 
 @app.route('/')
 def index():
@@ -15,9 +15,14 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        if not users.login(username, password):
-            return render_template('error.html', message='Wrong username or password')
-        return redirect('/')
+    if not users.login(username, password):
+        return render_template('error.html', message='Wrong username or password')
+    
+    user_id = session.get('user_id')
+    user_role = users.get_user_role(user_id)
+    if user_role:
+        session['role'] = user_role
+    return redirect('/login')
 
 @app.route('/logout')
 def logout():
@@ -46,7 +51,22 @@ def register():
             return render_template('error.html', message='Unknown user role')
 
         if not users.register(username, password1, role):
-            return render_template("error.html", message='Registartion failed, make sure to check username and password')
+            return render_template('error.html', message='Registartion failed, make sure to check username and password')
         return redirect('/')
+
+# Add new course
+@app.route('/add_course', methods=['POST'])
+def add_course():
+
+
+# Add new lesson
+@app.route('/add_lesson', methods=['POST'])
+def add_lesson():
+
+# Sign up for the course
+@app.route('/enroll_course', methods=['POST'])
+def enroll_course():
+
+
 
 

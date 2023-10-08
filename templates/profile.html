@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class='container'></div>
+<h2 class='center'>Personal Profile</h2>
+<nav>
+<ul>
+<li><a href='/'>Front page</a></li>
+<li><a href='/courses'>Courses</a></li>
+<li><a href='/profile'>Profile</a></li>
+<li><a href='/logout'>Logout</a></li>
+</ul>
+</nav>
+</header>
+    
+<main>
+{% if session.user_username %}    
+<h2>Welcome, {{ session.user_username }}!</h2>
+{% endif %}
+
+<section id='progress'>
+<h3>Progress Statistics</h3>
+<ul>
+<li>
+<span>Course 1: </span>
+<span>Progress: 50%</span>
+</li>
+<li>
+<span>Course 2: </span>
+<span>Progress: 75%</span>
+</li>
+</ul>
+</section>
+</main>
+
+{% endblock %}

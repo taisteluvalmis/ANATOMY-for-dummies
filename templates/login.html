@@ -1,11 +1,32 @@
-<center>
-    <h1>Login</h1>
-    <br>
-    <form action="/login" method="POST">
-        <p>Username:<br>
-        <input type="text" username="username"></p>
-        <p>Password:<br>
-        <input type="password" username="password"></p>
-        <input type="submit" value="Login">
-        </form>
-    </center>
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class='container'>
+<h2 class='center'>Welcome to Course Platform!</h2>
+<nav>
+<ul>
+<li><a href='/'>Front page</a></li>
+<li><a href='/courses'>Courses</a></li>
+<li><a href='/profile'>Profile</a></li>
+<li><a href='/logout'>Logout</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h2>Courses</h2>
+<ul>
+<li>
+<h3>Course 1: Upper body muscles</h3>
+<p>Description of course 1.</p>
+<a href='/course/1'>Read more</a>
+</li>
+<li>
+<h3>Course 2: Lower body muscles</h3>
+<p>Description of course 2.</p>
+<a href='/course/2'>Read more</a>
+</li>
+</ul>
+</main>
+
+
+{% endblock %}
