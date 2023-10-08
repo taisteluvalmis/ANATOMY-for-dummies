@@ -4,7 +4,9 @@ Opetussovellus anatomiasta
 Sovelluksen on tarkoitus olla matalan kynnyksen opetussovellus parempaan anatomiatuntemukseen.
 Sen on myös tarkoitus auttaa oppilasta innostumaan kehonhuollosta ja antamaan
 sitä varten neuvoja ja vinkkejä. Sovelluksesta löytyy myös kursseista fun fact -teemaisia tietoiskuja.
+Mikäli lopussa jää aikaa niin aion tehdä kurssialustalle keskustelupalstan, jossa kurssin opiskelijat voivat keskustella kurssin aiheista tai pyytää apua.
 
+Sovelluksen idea:
 Sovelluksen käyttäjä toimii opiskelijan roolissa.
 Opiskelija tekee oman käyttäjätunnuksen, jossa hän luo käyttäjänimen ja antaa salasanan.
 Sen jälkeen opiskelija pääsee kurssialustalle, josta löytyy eri pienkursseja eri lihasryhmistä ja muuhun anatomiaan liittyvästä.
@@ -21,24 +23,23 @@ Sovelluksen opettaja pystyy tekemään/poistamaan kursseja tai lisäämään tie
 Opettajalla on omat käyttäjätunnukset, jotka mahdollistavat laajemmat muutokset.
 Opettaja pystyy näkemään kurssin osallistujat ja heidän tilastot.
 
-(24.09.2023)
-Sovelluksen ominaisuudet:
-1. Käyttäjä voi kirjautua sisään tai tehdä käyttäjätunnuksen (Toimii)
-2. Käyttäjä voi osallistua kurssialustalla eri kursseille
-3. Kursseilla on monivalinta-, sekä yksisanaisia kirjoitustehtäviä
-4. Kurssin edetessä käyttäjälle näkyy nippelitietoja anatomiasta
-5. Käyttäjän päästessä kurssista läpi, ilmestyy hänelle lyhyt kehonhuolto ohje tai vinkki
-6. Käyttäjä voi seurata etenemistään tilastojen avulla
-7. Pääkäyttäjä voi kirjautua kurssialustalle
-8. Pääkäyttäjä näkee muiden käyttäjien etenemisen kursseilla
-9. Pääkäyttäjä voi lisätä tai poistaa kurssin käyttäjiä
-
-- Sovelluksen ominaisuudet kirjautuminen ja käyttäjätunnuksen tekeminen löytyvät koodista. Myös tietokantayhteys on saatu toimimaan. Tällä hetkellä "login" tai "register" aiheuttavat virheen nimeltä Bad request. Kyseessä on todennäköisesti jokin virhe "POST" komennossa, jota en ole vielä paikallistanut. Tämän vuoksi tällä hetkellä sovellusta ei pysty testaamaan sen enempää. Seuraavaksi on tarkoitus korjata kyseinen virhe, lisätä uusia tauluja ja rakentaa kurssialusta. Tarvittavien toiminnallisuuksien jälkeen alan muokkaamaan sovelluksen visuaalista ilmettä. Sovellus on vasta alussa, mutta sille on tehty hyvä pohja jatkolle.
+(08.09.2023)
+Tämän hetken tilanne sovelluksen testauksessa:
+- Käyttäjä voi kirjautua sisään tai tehdä käyttäjätunnuksen.
+- Sovelluksen html tiedostot ja layout ovat käytännössä valmiit.
+- Sovellukseen on lisätty uusia tauluja tietokantaan.
+- Sovellukseen on tehty pohjat tuleville metodeille.
+- Kokonaisuus alkaa olla kunnossa, mutta hion vielä eri objektien välistä toiminnalisuutta, jonka vuoksi sovellusta ei voi tällä hetkellä sen enempää testata.
+- Viimeisin git push oli tehty kaikki tiedostot yhdessä, koska en ollut saanut sitä aikaisemmin toimimaan (ongelma personal tokenin luonnissa). Jatkossa teen git pushin jokaisen muutoksen jälkeen.
 
 Sovelluksen taulut:
 1. Users
-2. (Muut ovat vielä tulossa)
-3. Muun muassa: reviews, answers, options ja niin edelleen.
+2. Courses
+3. Lessons
+4. Enrollments
+5. Choices
+6. Answers
+7. Reviews
 
 Sovelluksen asentamisen ohjeet paikallisesti:
 1. Tallenna tästä sovelluksesta löytyvät tiedostot samaan kansioon. (Huomaa tiedoston requirement.txt vaadittavat paketit ja lataa ne)
