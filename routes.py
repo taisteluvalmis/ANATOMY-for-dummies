@@ -1,6 +1,6 @@
 from app import app
-from flask import redirect, render_template, request
-import users, courses, stats
+from flask import redirect, render_template, request, session
+import users
 
 @app.route('/')
 def index():
@@ -18,11 +18,7 @@ def login():
     if not users.login(username, password):
         return render_template('error.html', message='Wrong username or password')
     
-    user_id = session.get('user_id')
-    user_role = users.get_user_role(user_id)
-    if user_role:
-        session['role'] = user_role
-    return redirect('/login')
+    return redirect('/')
 
 @app.route('/logout')
 def logout():
@@ -36,6 +32,7 @@ def register():
 
     if request.method == 'POST':
         username = request.form['username']
+        
         if len(username) < 1 or len(username) > 20:
             return render_template('error.html', message='Username must have 1-20 characters')
 
@@ -52,20 +49,24 @@ def register():
 
         if not users.register(username, password1, role):
             return render_template('error.html', message='Registartion failed, make sure to check username and password')
-        return redirect('/')
+        return redirect('/register')
+    return render_template('register.html')
 
 # Add new course
 @app.route('/add_course', methods=['POST'])
 def add_course():
+    pass
 
 
 # Add new lesson
 @app.route('/add_lesson', methods=['POST'])
 def add_lesson():
+    pass
 
 # Sign up for the course
 @app.route('/enroll_course', methods=['POST'])
 def enroll_course():
+    pass
 
 
 
