@@ -1,10 +1,12 @@
 import os
 from db import db
 from flask import abort, request, session
+from sqlalchemy import text
 from werkzeug.security import check_password_hash, generate_password_hash
+from sqlalchemy.exc import SQLAlchemyError
 
 def login(username, password):
-    sql = 'SELECT password, id, role FROM users WHERE username=:username'
+    sql = text('SELECT password, id, role FROM users WHERE username=:username')
     result = db.session.execute(sql, {'username':username})
     user = result.fetchone()
     if not user:
@@ -25,11 +27,13 @@ def logout():
 def register(username, password, role):
     hash_value = generate_password_hash(password)
     try:
-        sql = '''INSERT INTO users (username, password, role)
-                 VALUES (:username, :password, :role)'''
+        sql = text('''INSERT INTO users (username, password, role)
+                 VALUES (:username, :password, :role)''')
         db.session.execute(sql, {'username':username, 'password':hash_value, 'role':role})
         db.session.commit()
-    except:
+    except SQLAlchemyError as e:
+        print(f"Database error: {e}")
+        db.session.rollback()
         return False
     return login(username, password)
 
@@ -43,3 +47,4 @@ def require_role(role):
 def check_csrf():
     if session['csrf_token'] != request.form['csrf_token']:
         abort(403)
+

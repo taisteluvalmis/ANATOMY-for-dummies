@@ -2,3 +2,4 @@
 
 # Counts progress
 def calculate_progress(user_id, course_id):
+    pass
