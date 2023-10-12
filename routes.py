@@ -18,7 +18,7 @@ def login():
     if not users.login(username, password):
         return render_template('error.html', message='Wrong username or password')
     
-    return redirect('/')
+    return redirect('/login')
 
 @app.route('/logout')
 def logout():
